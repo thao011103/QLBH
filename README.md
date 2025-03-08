@@ -1,5 +1,6 @@
 # 🛍️ Phần Mềm Quản Lý Bán Hàng Cho Cửa Hàng Mỹ Phẩm Tip Xinh
-![Giao diện dashboard]([https://raw.githubusercontent.com/yourusername/your-repo/main/path/to/image.png](https://github.com/thao011103/QLBH/blob/main/Dashboard.png?raw=true))
+![Giao diện dashboard](https://github.com/thao011103/QLBH/blob/main/Dashboard.png?raw=true)
+
 
 ## 📌 Giới thiệu
 Dự án này là một phần mềm quản lý bán hàng giúp cửa hàng mỹ phẩm **Tip Xinh** theo dõi hàng hóa, đơn hàng, khách hàng và tối ưu hóa quy trình bán hàng.
