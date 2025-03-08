@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f199139c83b64647b838523e69d21d0f" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="KHOHANG.tb_CT_HOADON" Width="1.5" PointX="5.75" PointY="0.875" />
+        <EntityTypeShape EntityType="KHOHANG.tb_CT_PHIEUNHAP" Width="1.5" PointX="5.75" PointY="8.875" />
+        <EntityTypeShape EntityType="KHOHANG.tb_HOADON" Width="1.5" PointX="3" PointY="4.625" />
+        <EntityTypeShape EntityType="KHOHANG.tb_KHACHHANG" Width="1.5" PointX="0.75" PointY="0.875" />
+        <EntityTypeShape EntityType="KHOHANG.tb_NHACC" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KHOHANG.tb_NHANVIEN" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="KHOHANG.tb_NHOMHH" Width="1.5" PointX="8.75" PointY="1.75" />
+        <EntityTypeShape EntityType="KHOHANG.tb_PHIEUNHAP" Width="1.5" PointX="6" PointY="4.625" />
+        <EntityTypeShape EntityType="KHOHANG.tb_TAIKHOAN" Width="1.5" PointX="3" PointY="12" />
+        <EntityTypeShape EntityType="KHOHANG.tb_TONKHO" Width="1.5" PointX="7.75" PointY="8.875" />
+        <AssociationConnector Association="KHOHANG.FK_tb_HOADON_tb_KHACHHANG" />
+        <AssociationConnector Association="KHOHANG.FK_tb_HOADON_tb_NHANVIEN" />
+        <AssociationConnector Association="KHOHANG.FK_tb_PHIEUNHAP_tb_NHACC" />
+        <AssociationConnector Association="KHOHANG.FK__tb_TAIKHOA__MANV__61F08603" />
+        <AssociationConnector Association="KHOHANG.FK_tb_PHIEUNHAP_tb_NHANVIEN" />
+        <EntityTypeShape EntityType="KHOHANG.tb_HANGHOA" Width="1.5" PointX="11" PointY="4.625" />
+        <AssociationConnector Association="KHOHANG.FK_tb_HANGHOA_tb_NHOMHH" />
+        <EntityTypeShape EntityType="KHOHANG.view_HANGHOA_WITH_LG_TON" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="KHOHANG.view_TONKHO" Width="1.5" PointX="10.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

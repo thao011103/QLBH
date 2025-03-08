@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KHOHANG.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_CT_HOADON">
+    <Key>
+      <PropertyRef Name="MA_CT_HD" />
+    </Key>
+    <Property Name="MA_CT_HD" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MAHD" Type="nvarchar" MaxLength="20" />
+    <Property Name="TENHH" Type="nvarchar" MaxLength="50" />
+    <Property Name="MAHH" Type="nvarchar" MaxLength="13" />
+    <Property Name="SOLUONGCT" Type="int" />
+    <Property Name="GIABAN" Type="float" />
+    <Property Name="THANHTIEN" Type="float" />
+    <Property Name="STT" Type="int" />
+  </EntityType>
+  <EntityType Name="tb_CT_PHIEUNHAP">
+    <Key>
+      <PropertyRef Name="MA_CT_PN" />
+    </Key>
+    <Property Name="MA_CT_PN" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MAPN" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TENHH" Type="nvarchar" MaxLength="50" />
+    <Property Name="MAHH" Type="nvarchar" MaxLength="13" />
+    <Property Name="SOLUONGCT" Type="int" />
+    <Property Name="GIANHAP" Type="float" />
+    <Property Name="THANHTIEN" Type="float" />
+    <Property Name="STT" Type="int" />
+  </EntityType>
+  <EntityType Name="tb_HANGHOA">
+    <Key>
+      <PropertyRef Name="MAHH" />
+    </Key>
+    <Property Name="MAHH" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="TENHH" Type="nvarchar" MaxLength="50" />
+    <Property Name="DVT" Type="nvarchar" MaxLength="10" />
+    <Property Name="GIANHAP" Type="float" />
+    <Property Name="GIABAN" Type="float" />
+    <Property Name="MOTA" Type="nvarchar" MaxLength="500" />
+    <Property Name="MANHOM" Type="nvarchar" MaxLength="20" />
+    <Property Name="NUOCSX" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tb_HOADON">
+    <Key>
+      <PropertyRef Name="MAHD" />
+    </Key>
+    <Property Name="MAHD" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NGAYHD" Type="datetime" />
+    <Property Name="SOLUONG" Type="int" />
+    <Property Name="TONGTIEN" Type="float" />
+    <Property Name="GHICHU" Type="nvarchar" MaxLength="50" />
+    <Property Name="MANV" Type="nvarchar" MaxLength="20" />
+    <Property Name="MAKH" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tb_KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TENKH" Type="nvarchar" MaxLength="50" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="500" />
+    <Property Name="GIOITINH" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tb_NHACC">
+    <Key>
+      <PropertyRef Name="MANCC" />
+    </Key>
+    <Property Name="MANCC" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TENNCC" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="200" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="20" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="GHI_CHU" Type="nvarchar" MaxLength="50" />
+    <Property Name="MASOTHUE" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_NHANVIEN">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TENNV" Type="nvarchar" MaxLength="50" />
+    <Property Name="GIOITINH" Type="nvarchar" MaxLength="20" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tb_NHOMHH">
+    <Key>
+      <PropertyRef Name="MANHOM" />
+    </Key>
+    <Property Name="MANHOM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TENNHOM" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_PHIEUNHAP">
+    <Key>
+      <PropertyRef Name="MAPN" />
+    </Key>
+    <Property Name="MAPN" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NGAYNHAP" Type="datetime" />
+    <Property Name="SOLUONG" Type="int" />
+    <Property Name="TONGTIEN" Type="float" />
+    <Property Name="GHICHU" Type="nvarchar" MaxLength="50" />
+    <Property Name="MANV" Type="nvarchar" MaxLength="20" />
+    <Property Name="MANCC" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tb_TAIKHOAN">
+    <Key>
+      <PropertyRef Name="MATK" />
+    </Key>
+    <Property Name="MATK" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MANV" Type="nvarchar" MaxLength="20" />
+    <Property Name="TENDANGNHAP" Type="nvarchar" MaxLength="50" />
+    <Property Name="MATKHAU" Type="nvarchar" MaxLength="10" />
+    <Property Name="VAITRO" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_TONKHO">
+    <Key>
+      <PropertyRef Name="MAHH" />
+    </Key>
+    <Property Name="MAHH" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="LG_NHAP" Type="int" />
+    <Property Name="LG_BAN" Type="int" />
+    <Property Name="LG_TON" Type="int" />
+    <Property Name="TRIGIA" Type="float" />
+    <Property Name="THANHTIEN" Type="float" />
+    <Property Name="TENHH" Type="nvarchar" MaxLength="50" />
+    <Property Name="LG_ANTOAN" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QUANLY_BANHANG.dbo.view_HANGHOA_WITH_LG_TON' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_HANGHOA_WITH_LG_TON">
+    <Key>
+      <PropertyRef Name="MAHH" />
+      <PropertyRef Name="LG_TON" />
+    </Key>
+    <Property Name="MAHH" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="TENHH" Type="nvarchar" MaxLength="50" />
+    <Property Name="DVT" Type="nvarchar" MaxLength="10" />
+    <Property Name="GIABAN" Type="float" />
+    <Property Name="LG_TON" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QUANLY_BANHANG.dbo.view_TONKHO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_TONKHO">
+    <Key>
+      <PropertyRef Name="MAHH" />
+      <PropertyRef Name="LG_NHAP" />
+      <PropertyRef Name="LG_BAN" />
+      <PropertyRef Name="TRIGIA" />
+    </Key>
+    <Property Name="MAHH" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="TENHH" Type="nvarchar" MaxLength="50" />
+    <Property Name="DVT" Type="nvarchar" MaxLength="10" />
+    <Property Name="LG_NHAP" Type="int" Nullable="false" />
+    <Property Name="LG_BAN" Type="int" Nullable="false" />
+    <Property Name="LG_TON" Type="int" />
+    <Property Name="TRIGIA" Type="float" Nullable="false" />
+    <Property Name="THANHTIEN" Type="float" />
+    <Property Name="LG_ANTOAN" Type="int" />
+  </EntityType>
+  <Association Name="FK__tb_TAIKHOA__MANV__61F08603">
+    <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+    <End Role="tb_TAIKHOAN" Type="Self.tb_TAIKHOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="tb_TAIKHOAN">
+        <PropertyRef Name="MANV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_HANGHOA_tb_NHOMHH">
+    <End Role="tb_NHOMHH" Type="Self.tb_NHOMHH" Multiplicity="0..1" />
+    <End Role="tb_HANGHOA" Type="Self.tb_HANGHOA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NHOMHH">
+        <PropertyRef Name="MANHOM" />
+      </Principal>
+      <Dependent Role="tb_HANGHOA">
+        <PropertyRef Name="MANHOM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_HOADON_tb_KHACHHANG">
+    <End Role="tb_KHACHHANG" Type="Self.tb_KHACHHANG" Multiplicity="0..1" />
+    <End Role="tb_HOADON" Type="Self.tb_HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_KHACHHANG">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="tb_HOADON">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_HOADON_tb_NHANVIEN">
+    <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+    <End Role="tb_HOADON" Type="Self.tb_HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="tb_HOADON">
+        <PropertyRef Name="MANV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_PHIEUNHAP_tb_NHACC">
+    <End Role="tb_NHACC" Type="Self.tb_NHACC" Multiplicity="0..1" />
+    <End Role="tb_PHIEUNHAP" Type="Self.tb_PHIEUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NHACC">
+        <PropertyRef Name="MANCC" />
+      </Principal>
+      <Dependent Role="tb_PHIEUNHAP">
+        <PropertyRef Name="MANCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_PHIEUNHAP_tb_NHANVIEN">
+    <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+    <End Role="tb_PHIEUNHAP" Type="Self.tb_PHIEUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="tb_PHIEUNHAP">
+        <PropertyRef Name="MANV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetDoanhThuTheoThang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="GroupBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaNV" Type="int" Mode="In" />
+    <Parameter Name="MaKH" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="KHOHANGStoreContainer">
+    <EntitySet Name="tb_CT_HOADON" EntityType="Self.tb_CT_HOADON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_CT_PHIEUNHAP" EntityType="Self.tb_CT_PHIEUNHAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_HANGHOA" EntityType="Self.tb_HANGHOA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_HOADON" EntityType="Self.tb_HOADON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_KHACHHANG" EntityType="Self.tb_KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_NHACC" EntityType="Self.tb_NHACC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_NHANVIEN" EntityType="Self.tb_NHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_NHOMHH" EntityType="Self.tb_NHOMHH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_PHIEUNHAP" EntityType="Self.tb_PHIEUNHAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_TAIKHOAN" EntityType="Self.tb_TAIKHOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_TONKHO" EntityType="Self.tb_TONKHO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="view_HANGHOA_WITH_LG_TON" EntityType="Self.view_HANGHOA_WITH_LG_TON" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_HANGHOA_WITH_LG_TON].[MAHH] AS [MAHH], 
+    [view_HANGHOA_WITH_LG_TON].[TENHH] AS [TENHH], 
+    [view_HANGHOA_WITH_LG_TON].[DVT] AS [DVT], 
+    [view_HANGHOA_WITH_LG_TON].[GIABAN] AS [GIABAN], 
+    [view_HANGHOA_WITH_LG_TON].[LG_TON] AS [LG_TON]
+    FROM [dbo].[view_HANGHOA_WITH_LG_TON] AS [view_HANGHOA_WITH_LG_TON]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_TONKHO" EntityType="Self.view_TONKHO" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_TONKHO].[MAHH] AS [MAHH], 
+    [view_TONKHO].[TENHH] AS [TENHH], 
+    [view_TONKHO].[DVT] AS [DVT], 
+    [view_TONKHO].[LG_NHAP] AS [LG_NHAP], 
+    [view_TONKHO].[LG_BAN] AS [LG_BAN], 
+    [view_TONKHO].[LG_TON] AS [LG_TON], 
+    [view_TONKHO].[TRIGIA] AS [TRIGIA], 
+    [view_TONKHO].[THANHTIEN] AS [THANHTIEN], 
+    [view_TONKHO].[LG_ANTOAN] AS [LG_ANTOAN]
+    FROM [dbo].[view_TONKHO] AS [view_TONKHO]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__tb_TAIKHOA__MANV__61F08603" Association="Self.FK__tb_TAIKHOA__MANV__61F08603">
+      <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+      <End Role="tb_TAIKHOAN" EntitySet="tb_TAIKHOAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_HANGHOA_tb_NHOMHH" Association="Self.FK_tb_HANGHOA_tb_NHOMHH">
+      <End Role="tb_NHOMHH" EntitySet="tb_NHOMHH" />
+      <End Role="tb_HANGHOA" EntitySet="tb_HANGHOA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_HOADON_tb_KHACHHANG" Association="Self.FK_tb_HOADON_tb_KHACHHANG">
+      <End Role="tb_KHACHHANG" EntitySet="tb_KHACHHANG" />
+      <End Role="tb_HOADON" EntitySet="tb_HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_HOADON_tb_NHANVIEN" Association="Self.FK_tb_HOADON_tb_NHANVIEN">
+      <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+      <End Role="tb_HOADON" EntitySet="tb_HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_PHIEUNHAP_tb_NHACC" Association="Self.FK_tb_PHIEUNHAP_tb_NHACC">
+      <End Role="tb_NHACC" EntitySet="tb_NHACC" />
+      <End Role="tb_PHIEUNHAP" EntitySet="tb_PHIEUNHAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_PHIEUNHAP_tb_NHANVIEN" Association="Self.FK_tb_PHIEUNHAP_tb_NHANVIEN">
+      <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+      <End Role="tb_PHIEUNHAP" EntitySet="tb_PHIEUNHAP" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

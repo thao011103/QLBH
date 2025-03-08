@@ -1,0 +1,17 @@
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\BussinessLayer.dll.config
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\BussinessLayer.dll
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\BussinessLayer.pdb
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\DataLayer.dll
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\DataLayer.dll.config
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\obj\Debug\BussinessLayer.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\obj\Debug\BussinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\obj\Debug\BussinessLayer.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\obj\Debug\BussinessLayer.dll
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\obj\Debug\BussinessLayer.pdb
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\ADMIN\source\repos\QUANLYKHOHANG\BussinessLayer\bin\Debug\BCrypt.Net-Next.xml

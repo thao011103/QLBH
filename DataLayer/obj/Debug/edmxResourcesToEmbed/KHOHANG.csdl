@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KHOHANG" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_TinhTonKho" />
+    <FunctionImport Name="GetDoanhThuTheoThang" ReturnType="Collection(KHOHANG.GetDoanhThuTheoThang_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="GroupBy" Mode="In" Type="String" />
+      <Parameter Name="MaNV" Mode="In" Type="Int32" />
+      <Parameter Name="MaKH" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="tb_CT_HOADON" EntityType="KHOHANG.tb_CT_HOADON" />
+    <EntitySet Name="tb_CT_PHIEUNHAP" EntityType="KHOHANG.tb_CT_PHIEUNHAP" />
+    <EntitySet Name="tb_HOADON" EntityType="KHOHANG.tb_HOADON" />
+    <EntitySet Name="tb_KHACHHANG" EntityType="KHOHANG.tb_KHACHHANG" />
+    <EntitySet Name="tb_NHACC" EntityType="KHOHANG.tb_NHACC" />
+    <EntitySet Name="tb_NHANVIEN" EntityType="KHOHANG.tb_NHANVIEN" />
+    <EntitySet Name="tb_NHOMHH" EntityType="KHOHANG.tb_NHOMHH" />
+    <EntitySet Name="tb_PHIEUNHAP" EntityType="KHOHANG.tb_PHIEUNHAP" />
+    <EntitySet Name="tb_TAIKHOAN" EntityType="KHOHANG.tb_TAIKHOAN" />
+    <EntitySet Name="tb_TONKHO" EntityType="KHOHANG.tb_TONKHO" />
+    <AssociationSet Name="FK_tb_HOADON_tb_KHACHHANG" Association="KHOHANG.FK_tb_HOADON_tb_KHACHHANG">
+      <End Role="tb_KHACHHANG" EntitySet="tb_KHACHHANG" />
+      <End Role="tb_HOADON" EntitySet="tb_HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_HOADON_tb_NHANVIEN" Association="KHOHANG.FK_tb_HOADON_tb_NHANVIEN">
+      <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+      <End Role="tb_HOADON" EntitySet="tb_HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_PHIEUNHAP_tb_NHACC" Association="KHOHANG.FK_tb_PHIEUNHAP_tb_NHACC">
+      <End Role="tb_NHACC" EntitySet="tb_NHACC" />
+      <End Role="tb_PHIEUNHAP" EntitySet="tb_PHIEUNHAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_TAIKHOA__MANV__61F08603" Association="KHOHANG.FK__tb_TAIKHOA__MANV__61F08603">
+      <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+      <End Role="tb_TAIKHOAN" EntitySet="tb_TAIKHOAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_PHIEUNHAP_tb_NHANVIEN" Association="KHOHANG.FK_tb_PHIEUNHAP_tb_NHANVIEN">
+      <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+      <End Role="tb_PHIEUNHAP" EntitySet="tb_PHIEUNHAP" />
+    </AssociationSet>
+    <EntitySet Name="tb_HANGHOA" EntityType="KHOHANG.tb_HANGHOA" />
+    <AssociationSet Name="FK_tb_HANGHOA_tb_NHOMHH" Association="KHOHANG.FK_tb_HANGHOA_tb_NHOMHH">
+      <End Role="tb_NHOMHH" EntitySet="tb_NHOMHH" />
+      <End Role="tb_HANGHOA" EntitySet="tb_HANGHOA" />
+    </AssociationSet>
+    <EntitySet Name="view_HANGHOA_WITH_LG_TON" EntityType="KHOHANG.view_HANGHOA_WITH_LG_TON" />
+    <EntitySet Name="view_TONKHO" EntityType="KHOHANG.view_TONKHO" />
+  </EntityContainer>
+  <ComplexType Name="GetDoanhThuTheoThang_Result">
+    <Property Type="String" Name="MAHH" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="TENHH" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="GIABAN" Nullable="true" />
+    <Property Type="Int32" Name="SoLuong" Nullable="true" />
+    <Property Type="Double" Name="DoanhThu" Nullable="true" />
+    <Property Type="Double" Name="ChiPhi" Nullable="true" />
+    <Property Type="Double" Name="LoiNhuan" Nullable="true" />
+    <Property Type="Double" Name="TyLeLoiNhuan" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tb_CT_HOADON">
+    <Key>
+      <PropertyRef Name="MA_CT_HD" />
+    </Key>
+    <Property Name="MA_CT_HD" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MAHD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TENHH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAHH" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="SOLUONGCT" Type="Int32" />
+    <Property Name="GIABAN" Type="Double" />
+    <Property Name="THANHTIEN" Type="Double" />
+    <Property Name="STT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tb_CT_PHIEUNHAP">
+    <Key>
+      <PropertyRef Name="MA_CT_PN" />
+    </Key>
+    <Property Name="MA_CT_PN" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MAPN" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TENHH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAHH" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="SOLUONGCT" Type="Int32" />
+    <Property Name="GIANHAP" Type="Double" />
+    <Property Name="THANHTIEN" Type="Double" />
+    <Property Name="STT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tb_HOADON">
+    <Key>
+      <PropertyRef Name="MAHD" />
+    </Key>
+    <Property Name="MAHD" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYHD" Type="DateTime" Precision="3" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <Property Name="TONGTIEN" Type="Double" />
+    <Property Name="GHICHU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MANV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MAKH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_KHACHHANG" Relationship="KHOHANG.FK_tb_HOADON_tb_KHACHHANG" FromRole="tb_HOADON" ToRole="tb_KHACHHANG" />
+    <NavigationProperty Name="tb_NHANVIEN" Relationship="KHOHANG.FK_tb_HOADON_tb_NHANVIEN" FromRole="tb_HOADON" ToRole="tb_NHANVIEN" />
+  </EntityType>
+  <EntityType Name="tb_KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TENKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="GIOITINH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_HOADON" Relationship="KHOHANG.FK_tb_HOADON_tb_KHACHHANG" FromRole="tb_KHACHHANG" ToRole="tb_HOADON" />
+  </EntityType>
+  <EntityType Name="tb_NHACC">
+    <Key>
+      <PropertyRef Name="MANCC" />
+    </Key>
+    <Property Name="MANCC" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TENNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GHI_CHU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MASOTHUE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_PHIEUNHAP" Relationship="KHOHANG.FK_tb_PHIEUNHAP_tb_NHACC" FromRole="tb_NHACC" ToRole="tb_PHIEUNHAP" />
+  </EntityType>
+  <EntityType Name="tb_NHANVIEN">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TENNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GIOITINH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_HOADON" Relationship="KHOHANG.FK_tb_HOADON_tb_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_HOADON" />
+    <NavigationProperty Name="tb_TAIKHOAN" Relationship="KHOHANG.FK__tb_TAIKHOA__MANV__61F08603" FromRole="tb_NHANVIEN" ToRole="tb_TAIKHOAN" />
+    <NavigationProperty Name="tb_PHIEUNHAP" Relationship="KHOHANG.FK_tb_PHIEUNHAP_tb_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_PHIEUNHAP" />
+  </EntityType>
+  <EntityType Name="tb_NHOMHH">
+    <Key>
+      <PropertyRef Name="MANHOM" />
+    </Key>
+    <Property Name="MANHOM" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TENNHOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_HANGHOA" Relationship="KHOHANG.FK_tb_HANGHOA_tb_NHOMHH" FromRole="tb_NHOMHH" ToRole="tb_HANGHOA" />
+  </EntityType>
+  <EntityType Name="tb_PHIEUNHAP">
+    <Key>
+      <PropertyRef Name="MAPN" />
+    </Key>
+    <Property Name="MAPN" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYNHAP" Type="DateTime" Precision="3" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <Property Name="TONGTIEN" Type="Double" />
+    <Property Name="GHICHU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MANV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MANCC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_NHACC" Relationship="KHOHANG.FK_tb_PHIEUNHAP_tb_NHACC" FromRole="tb_PHIEUNHAP" ToRole="tb_NHACC" />
+    <NavigationProperty Name="tb_NHANVIEN" Relationship="KHOHANG.FK_tb_PHIEUNHAP_tb_NHANVIEN" FromRole="tb_PHIEUNHAP" ToRole="tb_NHANVIEN" />
+  </EntityType>
+  <EntityType Name="tb_TAIKHOAN">
+    <Key>
+      <PropertyRef Name="MATK" />
+    </Key>
+    <Property Name="MATK" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MANV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TENDANGNHAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MATKHAU" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="VAITRO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_NHANVIEN" Relationship="KHOHANG.FK__tb_TAIKHOA__MANV__61F08603" FromRole="tb_TAIKHOAN" ToRole="tb_NHANVIEN" />
+  </EntityType>
+  <EntityType Name="tb_TONKHO">
+    <Key>
+      <PropertyRef Name="MAHH" />
+    </Key>
+    <Property Name="MAHH" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="LG_NHAP" Type="Int32" />
+    <Property Name="LG_BAN" Type="Int32" />
+    <Property Name="LG_TON" Type="Int32" />
+    <Property Name="TRIGIA" Type="Double" />
+    <Property Name="THANHTIEN" Type="Double" />
+    <Property Name="TENHH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LG_ANTOAN" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_tb_HOADON_tb_KHACHHANG">
+    <End Type="KHOHANG.tb_KHACHHANG" Role="tb_KHACHHANG" Multiplicity="0..1" />
+    <End Type="KHOHANG.tb_HOADON" Role="tb_HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_KHACHHANG">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="tb_HOADON">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_HOADON_tb_NHANVIEN">
+    <End Type="KHOHANG.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+    <End Type="KHOHANG.tb_HOADON" Role="tb_HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="tb_HOADON">
+        <PropertyRef Name="MANV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_PHIEUNHAP_tb_NHACC">
+    <End Type="KHOHANG.tb_NHACC" Role="tb_NHACC" Multiplicity="0..1" />
+    <End Type="KHOHANG.tb_PHIEUNHAP" Role="tb_PHIEUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NHACC">
+        <PropertyRef Name="MANCC" />
+      </Principal>
+      <Dependent Role="tb_PHIEUNHAP">
+        <PropertyRef Name="MANCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_TAIKHOA__MANV__61F08603">
+    <End Type="KHOHANG.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+    <End Type="KHOHANG.tb_TAIKHOAN" Role="tb_TAIKHOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="tb_TAIKHOAN">
+        <PropertyRef Name="MANV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_PHIEUNHAP_tb_NHANVIEN">
+    <End Type="KHOHANG.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+    <End Type="KHOHANG.tb_PHIEUNHAP" Role="tb_PHIEUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="tb_PHIEUNHAP">
+        <PropertyRef Name="MANV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tb_HANGHOA">
+    <Key>
+      <PropertyRef Name="MAHH" />
+    </Key>
+    <Property Name="MAHH" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="TENHH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DVT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="GIANHAP" Type="Double" />
+    <Property Name="GIABAN" Type="Double" />
+    <Property Name="MOTA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MANHOM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NUOCSX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_NHOMHH" Relationship="KHOHANG.FK_tb_HANGHOA_tb_NHOMHH" FromRole="tb_HANGHOA" ToRole="tb_NHOMHH" />
+  </EntityType>
+  <Association Name="FK_tb_HANGHOA_tb_NHOMHH">
+    <End Type="KHOHANG.tb_NHOMHH" Role="tb_NHOMHH" Multiplicity="0..1" />
+    <End Type="KHOHANG.tb_HANGHOA" Role="tb_HANGHOA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NHOMHH">
+        <PropertyRef Name="MANHOM" />
+      </Principal>
+      <Dependent Role="tb_HANGHOA">
+        <PropertyRef Name="MANHOM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="view_HANGHOA_WITH_LG_TON">
+    <Key>
+      <PropertyRef Name="MAHH" />
+      <PropertyRef Name="LG_TON" />
+    </Key>
+    <Property Name="MAHH" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="TENHH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DVT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="GIABAN" Type="Double" />
+    <Property Name="LG_TON" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_TONKHO">
+    <Key>
+      <PropertyRef Name="MAHH" />
+      <PropertyRef Name="LG_NHAP" />
+      <PropertyRef Name="LG_BAN" />
+      <PropertyRef Name="TRIGIA" />
+    </Key>
+    <Property Name="MAHH" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="TENHH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DVT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LG_NHAP" Type="Int32" Nullable="false" />
+    <Property Name="LG_BAN" Type="Int32" Nullable="false" />
+    <Property Name="LG_TON" Type="Int32" />
+    <Property Name="TRIGIA" Type="Double" Nullable="false" />
+    <Property Name="THANHTIEN" Type="Double" />
+    <Property Name="LG_ANTOAN" Type="Int32" />
+  </EntityType>
+</Schema>
